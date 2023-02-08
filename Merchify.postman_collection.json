@@ -1,0 +1,417 @@
+{
+	"info": {
+		"_postman_id": "4601b882-d2d3-4d14-8e12-fc3ae058afad",
+		"name": "Merchify",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Hospital",
+			"item": [
+				{
+					"name": "Register-Hospital",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospitalName\": \"Fortis\",\r\n    \"password\": \"123456\",\r\n    \"hospitalCode\": \"F@184\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login-Hospital",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospitalName\": \"Kokila\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add-Blood-Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTM1NTYyNmZiNTExZTljN2VkYWI1MiIsImlhdCI6MTY3NTg0MzU1MiwiZXhwIjoxNjc4NDM1NTUyfQ.tloIuzCw7Tg7OOMhePgmkURJx1skpa1jTFtGhTsNS_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodType\":\"O-\", \r\n    \"quantity\":\"1011\",\r\n    \"hospitalId\":\"63e385c7392bf213a72c384c\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital/add-blood-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital",
+								"add-blood-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update-Blood-Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTM1NTYyNmZiNTExZTljN2VkYWI1MiIsImlhdCI6MTY3NTg0MzU1MiwiZXhwIjoxNjc4NDM1NTUyfQ.tloIuzCw7Tg7OOMhePgmkURJx1skpa1jTFtGhTsNS_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"bloodType\": \"A+\",\r\n    \"quantity\": \"10\",\r\n    \"hospitalId\": \"63e355626fb511e9c7edab52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital/update-blood-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital",
+								"update-blood-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove-Blood-Info",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTM1NTYyNmZiNTExZTljN2VkYWI1MiIsImlhdCI6MTY3NTg0MzU1MiwiZXhwIjoxNjc4NDM1NTUyfQ.tloIuzCw7Tg7OOMhePgmkURJx1skpa1jTFtGhTsNS_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospitalId\":\"63e355626fb511e9c7edab52\",\r\n    \"bloodType\":\"A+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital/remove-blood-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital",
+								"remove-blood-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get-All-Blood-Info",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital/blood-samples-info",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital",
+								"blood-samples-info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch-Hospital-Blood-Samples",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTM1NTYyNmZiNTExZTljN2VkYWI1MiIsImlhdCI6MTY3NTg0MzU1MiwiZXhwIjoxNjc4NDM1NTUyfQ.tloIuzCw7Tg7OOMhePgmkURJx1skpa1jTFtGhTsNS_A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospitalId\":\"63e355626fb511e9c7edab52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital/hospital-blood-samples",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital",
+								"hospital-blood-samples"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Receiver-Requests",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTM5NDA1NjhlZGViZjE3MGExZjJhNSIsImlhdCI6MTY3NTg1OTEyNCwiZXhwIjoxNjc4NDUxMTI0fQ.uTzQhCSkCTas81l-6vHB2Z2obz85Qox8x1mDUnW_aGI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"hospitalId\":\"63e355626fb511e9c7edab52\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/hospital/receiver-requests/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"hospital",
+								"receiver-requests",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Receiver",
+			"item": [
+				{
+					"name": "Register-Receiver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverName\":\"Adam\", \r\n    \"password\":\"123456\", \r\n    \"bloodType\":\"A+\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/receiver",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"receiver"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Auth-Receiver",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverName\":\"Adam\", \r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/receiver/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"receiver",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Request-Blood",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzZTM5NDA1NjhlZGViZjE3MGExZjJhNSIsImlhdCI6MTY3NTg1OTEyNCwiZXhwIjoxNjc4NDUxMTI0fQ.uTzQhCSkCTas81l-6vHB2Z2obz85Qox8x1mDUnW_aGI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"receiverId\": \"63e3940568edebf170a1f2a5\",\r\n    \"hospitalId\": \"63e355626fb511e9c7edab52\",\r\n    \"bloodType\": \"A+\",\r\n    \"quantity\": \"2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/receiver/request-blood-sample",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"receiver",
+								"request-blood-sample"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
